@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL Winner Prediction using ML</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 300px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input[type="text"], select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0069d9;
+        }
+
+        hr {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border: 0;
+            border-top: 1px solid #ccc;
+        }
+
+        strong {
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="container">
+        <h2>IPL Winner Prediction - ML MODEL</h2>
+        <form action="/predict" method="POST">
+            <label>Team 1:</label>
+            <select name="team1">
+                <option value="Chennai Super Kings">Chennai Super Kings</option>
+                <option value="Delhi Capitals">Delhi Capitals</option>
+                <option value="Kings XI Punjab">Kings XI Punjab</option>
+                <option value="Kolkata Knight Riders">Kolkata Knight Riders</option>
+                <option value="Mumbai Indians">Mumbai Indians</option>
+                <option value="Rajasthan Royals">Rajasthan Royals</option>
+                <option value="Royal Challengers Bangalore">Royal Challengers Bangalore</option>
+                <option value="Sunrisers Hyderabad">Sunrisers Hyderabad</option>
+            </select><br>
+    
+            <label>Team 2:</label>
+            <select name="team2">
+                <option value="Chennai Super Kings">Chennai Super Kings</option>
+                <option value="Delhi Capitals">Delhi Capitals</option>
+                <option value="Kings XI Punjab">Kings XI Punjab</option>
+                <option value="Kolkata Knight Riders">Kolkata Knight Riders</option>
+                <option value="Mumbai Indians">Mumbai Indians</option>
+                <option value="Rajasthan Royals">Rajasthan Royals</option>
+                <option value="Royal Challengers Bangalore">Royal Challengers Bangalore</option>
+                <option value="Sunrisers Hyderabad">Sunrisers Hyderabad</option>
+            </select><br>
+    
+            <label>Which Team Won The Toss:</label>
+            <select name="toss_winner">
+                <option value="Chennai Super Kings">Chennai Super Kings</option>
+                <option value="Delhi Capitals">Delhi Capitals</option>
+                <option value="Kings XI Punjab">Kings XI Punjab</option>
+                <option value="Kolkata Knight Riders">Kolkata Knight Riders</option>
+                <option value="Mumbai Indians">Mumbai Indians</option>
+                <option value="Rajasthan Royals">Rajasthan Royals</option>
+                <option value="Royal Challengers Bangalore">Royal Challengers Bangalore</option>
+                <option value="Sunrisers Hyderabad">Sunrisers Hyderabad</option>
+            </select><br>
+    
+            <label>What Did The Toss Winning Team Choose:</label>
+            <select name="toss_decision">
+                <option value="bat">Bat</option>
+                <option value="bowl">Bowl</option>
+            </select><br>
+            <hr>
+            <strong>The Winner is: <h2>{{result}}</h2></strong><br>
+            <hr>
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</body>
+</html>
